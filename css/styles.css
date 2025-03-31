@@ -91,6 +91,14 @@
   }
 }
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Metti lo sketch dietro il contenuto */
+  pointer-events: none; /* Impedisci allo sketch di intercettare gli eventi del mouse */
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
