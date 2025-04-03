@@ -3,11 +3,18 @@ let scappate = false;
 
 let scrollPercent = 0;
 
+let img;
+// Load the image and create a p5.Image object.
+function preload() {
+  //img = loadImage('/assets/tessuto.jpg');
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   createP('Drag the mouse to generate new boids.');
 
-      colorMode(HSB);
+  //colorMode(HSB);
+  colorMode(RGB);
   
   flock = new Flock();
 
@@ -32,6 +39,10 @@ function setup() {
 function draw() {
   
     background(0, 0, 50);
+      background(235, 225, 200);
+  // Draw the image.
+  //image(img, 0, 0);
+
   circle(width/2,height/2,width/2)
   
   text("Altezza della finestra: " + windowHeight, windowWidth/2, windowHeight/2);
@@ -94,7 +105,7 @@ class Boid {
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(random(-1, 1), random(-1, 1));
     this.position = createVector(x, y);
-    this.size = random(8, 12);
+    this.size = random(18, 22);
 
     // Maximum speed
     this.maxSpeed = 1;
@@ -102,7 +113,15 @@ class Boid {
     // Maximum steering force
     this.maxForce = 0.01;
 
-    this.color = color(random(256), 255, 255);
+    let r = random(240,255);
+    let g = random(20, 50);
+    let b = random(20, 150);
+    this.color = color(r, g, b);
+    this.pretheta = 0;
+    this.theta;
+    this.theta2;
+    
+    this.count = 0;
   }
 
   run(boids) {
@@ -132,7 +151,7 @@ class Boid {
     alignment.mult(10.0);
     cohesion.mult(10.0);
     } else {
-    separation.mult(2.0);
+    separation.mult(1.0);
     alignment.mult(1.0);
     cohesion.mult(1.0);
       }
@@ -188,52 +207,141 @@ class Boid {
         
   }
 
+  differenzaAngoliRadianti(angoloTarget, angoloCorrente) {
+  // Normalizza gli angoli nell'intervallo [0, 2 * PI)
+  angoloCorrente = angoloCorrente % (2 * PI);
+  angoloTarget = angoloTarget % (2 * PI);
+  if (angoloCorrente < 0) angoloCorrente += 2 * PI;
+  if (angoloTarget < 0) angoloTarget += 2 * PI;
+
+  let differenza = angoloTarget - angoloCorrente;
+
+  // Determina la direzione e il percorso più breve
+  if (differenza > PI) {
+    differenza -= 2 * PI; // Ruota in senso orario
+  } else if (differenza < -PI) {
+    differenza += 2 * PI; // Ruota in senso antiorario
+  }
+  return differenza;
+}
+  
   render() {
     // Draw a triangle rotated in the direction of velocity
-    let theta = this.velocity.heading() + radians(90);
+    this.theta = this.velocity.heading() + radians(90);
+    
+        let pinna = 0;
+    if (this.count > 360) {
+      this.count = 0;
+    }
+    //pinna = sin(this.count*0.1)/(random(100, 500));
+    
+    let sbatti = this.count * (this.velocity.mag() *10);
+    sbatti *= 1/(this.size * 10);
+    pinna = sin(sbatti);
+    pinna /= 200;
+    
+    //pinna = sin(this.count * mag(this.velocity));
+    if (scappate == true) {
+      pinna = sin(this.count*1)/(random(5, 10));
+    }
+    this.count ++;
+    
+    let differenza = this.differenzaAngoliRadianti(this.pretheta, this.theta)
+    
     fill(this.color);
     stroke(255);
     push();
     translate(this.position.x, this.position.y);
-    rotate(theta);
+    rotate(this.theta);
+    textSize(32);
+    //text(int(degrees(this.theta)), 0, 0);
+    //text(int(degrees(differenza)), 0, 0);
+    //text(this.velocity.mag(), 0, 0);
+    pop();
+    
+    let x1 = 0;          //Number: x-coordinate of the first anchor point.
+    let y1 = -this.size*3; //Number: y-coordinate of the first anchor point.
+    let x2 = -this.size*2; //Number: x-coordinate of the first control point.
+    let y2 = -this.size*1.5; //Number: y-coordinate of the first control point.
+    let x3 = -this.size; //Number: x-coordinate of the second control point.
+    let y3 = this.size; //Number: y-coordinate of the second control point.
+    let x4 = 0;         //Number: x-coordinate of the second anchor point.
+    let y4 = this.size*2; //Number: y-coordinate of the second anchor point.
+    
+    // coda
+    this.theta2 = this.theta + (differenza*0.9) + pinna;
+    fill(this.color);
+    stroke(255);
+    push();
+    translate(this.position.x, this.position.y);
+    rotate(this.theta2);
     beginShape();
-    vertex(0, -this.size * 2);
-    vertex(-this.size, this.size * 2);
-    vertex(this.size, this.size * 2);
+    vertex(0, this.size * 1.8);
+    vertex(-this.size/2, this.size * 4);
+    vertex(this.size, this.size * 4.2);
     endShape(CLOSE);
     pop();
+    this.pretheta = this.theta2;
+
+    
+    // ombra 1
+    fill('rgba(0, 0, 0, 0.25)');
+    noStroke();
+    push();
+    translate(this.position.x, this.position.y);
+    rotate(this.theta + 0.3);
+    bezier(x1, y1, x2, y2, x3, y3, x4 + 10, y4);
+    pop();
+    
+    // corpo
+    fill(this.color);
+    stroke(255);
+    push();
+    translate(this.position.x, this.position.y);
+    rotate(this.theta);
+    bezier(x1+1, y1, x2, y2, x3, y3, x4+1, y4);
+    bezier(-x1, y1, -x2, y2, -x3, y3, -x4, y4);
+    pop();
+    
+    // ombra 2
+    fill('rgba(0, 0, 0, 0.25)');
+    noStroke();
+    push();
+    translate(this.position.x, this.position.y);
+    rotate(this.theta + 0.3);
+    bezier(-x1, y1, -x2, y2, -x3, y3, -x4 + 10, y4);
+    pop();
+        
   }
 
   // Wraparound
   borders() {
-    if (this.position.x < -this.size) {
+    if (this.position.x < -this.size*3) {
       if (scappate == false){
         
-      this.position.x = width + this.size;
+      this.position.x = width + this.size*3;
       this.position.y = random(height);
 
           }
     }
 
-    if (this.position.y < -this.size) {
+    if (this.position.y < -this.size*3) {
        if (scappate == false){
-      this.position.y = height + this.size;
+      this.position.y = height + this.size*3;
          }
     }
 
-    if (this.position.x > width + this.size) {
+    if (this.position.x > width + this.size*3) {
       if (scappate == false){
-      this.position.x = -this.size;
-      
-        this.position.y = random(height);
+      this.position.x = -this.size*3;
+      this.position.y = random(height);
 
         }
     }
 
-    if (this.position.y > height + this.size) {
+    if (this.position.y > height + this.size*3) {
             if (scappate == false){
-
-      this.position.y = -this.size;
+      this.position.y = -this.size*3;
               }
     }
   }
@@ -242,7 +350,7 @@ class Boid {
   // Separation
   // Method checks for nearby boids and steers away
   separate(boids) {
-    let desiredSeparation = 30.0;
+    let desiredSeparation = 60.0;
     let steer = createVector(0, 0);
     let count = 0;
 
@@ -284,7 +392,7 @@ class Boid {
   // Alignment
   // For every nearby boid in the system, calculate the average velocity
   align(boids) {
-    let neighborDistance = 50;
+    let neighborDistance = 60;
     let sum = createVector(0, 0);
     let count = 0;
     for (let i = 0; i < boids.length; i++) {
