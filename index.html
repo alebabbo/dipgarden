@@ -125,7 +125,7 @@
         <section class="page-section">
             <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
                 <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold display-2 text-white">water</p>
+                    <p class="h1 text-primary font-weight-bold display-2">water</p>
                 </div>
             </div>
         </section>
@@ -133,7 +133,7 @@
         <section class="page-section">
             <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
                 <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold display-2 text-white">plants</p>
+                    <p class="h1 text-primary font-weight-bold display-2">plants</p>
                 </div>
             </div>
         </section>
@@ -141,7 +141,7 @@
         <section class="page-section">
             <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
                 <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold display-2 text-white">and fishes</p>
+                    <p class="h1 text-primary font-weight-bold display-2">and fishes</p>
                 </div>
             </div>
         </section>
@@ -149,7 +149,7 @@
         <section class="page-section">
             <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
                 <div class="bg-white col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h5 lh-base text-white text-muted"><i>Dip Garden</i> is developing a tecnique to grow robust domestic ecosystems with minimum effort.</p>
+                    <p class="h5 lh-base text-white text-muted"><i>Dip Garden</i> is developing a tecnique<br>to grow robust domestic ecosystems with minimum effort.</p>
                     <p class="text-white text-muted">The design is characterized by clean lines and minimalist aesthetic.</p>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                     <div class="col-lg-8 col-xl-6 text-center">
                         <h2 class="mt-0">Are you interested?</h2>
                         <!-- <hr class="divider" /> -->
-                        <p class="text-white mb-5">If you want discover details or executive summary of the project send us a message.</p>
+                        <p class="mb-5">If you want discover details or executive summary of the project send us a message.</p>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
@@ -285,17 +285,17 @@
                         </form>
                     </div>
                 </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <!--                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-4 text-center mb-5 mb-lg-0">
                         <i class="bi-phone fs-2 mb-3 text-muted"></i>
                         <div>+1 (555) 123-4567</div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- Footer-->
         <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2025 - Dip Garden</div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -325,20 +325,20 @@
     <script>
     const animatedElement = document.getElementById('animated-element');
     function getDocumentHeight() {
-  return Math.max(
-    document.body.scrollHeight,
-    document.documentElement.scrollHeight,
-    document.body.offsetHeight,
-    document.documentElement.offsetHeight,
-    document.body.clientHeight,
-    document.documentElement.clientHeight
-  );
-}
+        return Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.body.clientHeight,
+        document.documentElement.clientHeight
+        );
+    }
 
-const documentHeight = getDocumentHeight();
-const percentuale = 20; // Esempio: voglio sapere a che altezza in pixel si trova il 75% della pagina
+    const documentHeight = getDocumentHeight();
+    const percentuale = 16; // Esempio: voglio sapere a che altezza in pixel si trova il 75% della pagina
 
-const triggerPoint = (percentuale / 100) * documentHeight;
+    const triggerPoint = (percentuale / 100) * documentHeight;
 
     //const triggerPoint = 1200; // La posizione di scorrimento (in pixel) a cui attivare l'animazione
     const animationClass = 'animate__bounceInDown'; // La classe di animazione di Animate.css che vuoi usare
@@ -348,12 +348,12 @@ const triggerPoint = (percentuale / 100) * documentHeight;
         const scrollPosition = window.scrollY;
 
         if (scrollPosition > triggerPoint && !animatedElement.classList.contains(animatedClass)) {
-        // Rimuovi l'opacità 0 (o imposta la visibility a visible)
-        animatedElement.style.opacity = 1;
-        // animatedElement.style.visibility = 'visible';
+            // Rimuovi l'opacita 0 (o imposta la visibility a visible)
+            animatedElement.style.opacity = 1;
+            // animatedElement.style.visibility = 'visible';
 
-        // Aggiungi le classi per avviare l'animazione
-        animatedElement.classList.add(animatedClass, animationClass);
+            // Aggiungi le classi per avviare l'animazione
+            animatedElement.classList.add(animatedClass, animationClass);
         }
         // Opzionale: se vuoi che l'elemento torni invisibile quando si scorre indietro
         //   else if (scrollPosition <= triggerPoint && animatedElement.classList.contains(animatedClass)) {
