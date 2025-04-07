@@ -19,8 +19,6 @@
         <link href="css/styles.css" rel="stylesheet" />
         <!-- animazioni-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <script src="js/wow.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
         <!-- P5.js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
 
@@ -50,108 +48,121 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 vh-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 mt-auto">
-                        <h1 class="text-primary font-weight-bold">Are you interested in sustainable urban farming?</h1>
+                        <h1 class="text-white font-weight-bold display-1">Are you interested in sustainable urban farming?</h1>
                         <!-- <hr class="divider" /> -->
                     </div>
-                    <div class="col-lg-8 mb-auto">
-                        <p class="text-primary">Vertical farming, hydroponics, acquaponics...</p>
+                    <div class="col-lg-8 mb-auto w3-animate-opacity ">
+                        <h3 class="h3 text-white-75 mb-2 display-3">Vertical farming</h3>
+                        <h3 class="h3 text-white-75 mb-2 display-4">Hydroponics</h3>
+                        <h3 class="h3 text-white-75 mb-2 display-5">Acquaponics</h3>
+                        <h3 class="h3 text-white-75 mb-2 display-6">...</h3>
                     </div>
                 </div>
             </div>
         </header>
-
-        <section class="page-section">
-            <div class="container vh-50 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                     <p class="h1 text-primary font-weight-bold">Well, accept it...</p>
-                 </div>
+        <!-- About-->
+        <div class="wow bounceInUp">
+            Content to Reveal Here
             </div>
-        </section>
-
-        <section class="page-section">
-            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                     <p class="h1 text-primary font-weight-bold">...you will need:</p>
-                 </div>
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5 vh-50 d-flex flex-column align-items-center">
+                    <div class="col-lg-8 mt-auto mb-auto text-center">
+                        <p class="text-white lead">well,</p>
+                        <!-- <hr class="divider divider-light" /> -->
+                        <!-- <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p> -->
+                        <!-- <a class="btn btn-light btn-xl" href="#services">Get Started!</a> -->
+                    </div>
             </div>
         </section>
 
         <!-- Allinea al centro in verticale quando usi vh-100: usa d-flex flex-column e metti mt-auto al primo e mb-auto all'ultimo -->
 
         <section class="page-section">
-            <div class="container px-4 px-lg-5 vh-50 d-flex flex-column align-items-center justify-content-center">
-                <!-- <div class="wow bounceInDown row gx-4 gx-lg-5"> -->
-                <div id="animated-element" class="row gx-4 gx-lg-5">
+            <div class="container vh-50 d-flex flex-column justify-content-center">
+                <div class="row mt-auto  text-center">
+                    <p class="h1 text-white font-weight-bold display-5">be prepared to have...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5 vh-100 d-flex flex-column align-items-center justify-content-center">
+<!--                 <div class="row mt-auto text-center">
+                    <p class="h1 text-white font-weight-bold display-5">be prepared to have</p>
+                </div> -->
+                <div class="wow bounceInDown row gx-4 gx-lg-5">
+                    <!-- <div class="col-lg-4 col-md-6 text-center"> -->
                     <div class="col text-center">
-                        <div class=""><i class="bi-exclamation-triangle-fill fs-1 text-primary"></i></div>
-                        <h3 class="">a lot of<br><span class="bg-primary px-1 fs-1 fw-bolder">plastics</span></h3>
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-exclamation-triangle-fill fs-1 text-primary"></i></div>
+                            <h3 class="mb-2">a lot of<br><span class="bg-primary px-1 fs-1 fw-bolder">plastics</span></h3>
+                            <!-- <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p> -->
+                        </div>
                     </div>
                     <div class="col text-center">
-                        <div class=""><i class="bi-exclamation-triangle-fill fs-1 text-primary"></i></div>
-                        <h3 class="">a lot of<br><span class="bg-primary px-1 fs-1 fw-bolder">electricity</span></h3>
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-exclamation-triangle-fill fs-1 text-primary"></i></div>
+                            <h3 class="mb-2">A lot of<br>electricity consumption</h3>
+                            <!-- <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p> -->
+                        </div>
                     </div>
                     <div class="col text-center">
-                        <div class=""><i class="bi-exclamation-triangle-fill fs-1 text-primary"></i></div>
-                        <h3 class="">a lot of<br><span class="bg-primary px-1 fs-1 fw-bolder">control</span></h3>
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="mb-2">A lot of<br>control equipment</h3>
+                            <!-- <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <p class="text-white lead">or</p>
+                        <!-- <hr class="divider divider-light" /> -->
+                        <!-- <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p> -->
+                        <!-- <a class="btn btn-light btn-xl" href="#services">Get Started!</a> -->
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="page-section">
-            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold display-2">or</p>
-                </div>
+            <div class="container px-4 px-lg-5 vh-50 d-flex align-items-center justify-content-center">
+                <p class="h1 text-white font-weight-bold display-5">Maybe all you need is a<br>relaxing corner<br>where growing vegetables and plants</p>
+            </div>
+        </section>
+
+        <section class="page-section bg-secondary">
+            <div class="container px-4 px-lg-5">
+                <p class="h3 text-center mt-0 ">Enjoying interactions between</p>
             </div>
         </section>
 
         <section class="page-section">
-            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class=" lh-base h1 text-primary font-weight-bold">Maybe all you need is<br><span class="text-black bg-primary px-1">a quiet, little spot</span><br>where growing<br>vegetables and plants.</p>
-                </div>
+            <div class="container px-4 px-lg-5 vh-50 d-flex align-items-center justify-content-center">
+                <p class="h3 text-center mt-auto display-1">Plants</p>
             </div>
         </section>
 
         <section class="page-section">
-            <div class="container vh-50 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold">Enjoying the symbiotic interactions between:</p>
-                </div>
+            <div class="container px-4 px-lg-5 vh-50 d-flex align-items-center justify-content-center">
+                <p class="h3 text-center mt-0 display-1">Water</p>
             </div>
         </section>
 
         <section class="page-section">
-            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold display-2 text-white">water</p>
-                </div>
+            <div class="container px-4 px-lg-5 vh-50 d-flex align-items-center justify-content-center">
+                <p class="h3 text-center mt-0 display-6">and of course</p>
             </div>
         </section>
 
         <section class="page-section">
-            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold display-2 text-white">plants</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section">
-            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h1 text-primary font-weight-bold display-2 text-white">and fishes</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section">
-            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-                <div class="bg-white col-lg-8 mt-auto mb-auto text-center">
-                    <p class="h5 lh-base text-white text-muted"><i>Dip Garden</i> is developing a tecnique to grow robust domestic ecosystems with minimum effort.</p>
-                    <p class="text-white text-muted">The design is characterized by clean lines and minimalist aesthetic.</p>
-                </div>
+            <div class="container px-4 px-lg-5 vh-50 d-flex align-items-center justify-content-center">
+                <p class="h3 text-center mt-0 display-1">Fishes</p>
             </div>
         </section>
 
@@ -217,14 +228,20 @@
             </div>
         </div> -->
         <!-- Call to action-->
+        <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+            </div>
+        </section>
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6 text-center">
-                        <h2 class="mt-0">Are you interested?</h2>
-                        <!-- <hr class="divider" /> -->
-                        <p class="text-white mb-5">If you want discover details or executive summary of the project send us a message.</p>
+                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
@@ -236,29 +253,29 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm" name="simple-contact-form" accept-charset="utf-8"  action="https://formspree.io/f/myybbeae" method="POST">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                                 <label for="email">Email address</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                                 <label for="phone">Phone number</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
@@ -310,56 +327,8 @@
 
         
         <script>
-        new WOW(
-            {
-            boxClass:     'wow',      // default
-            animateClass: 'animated', // default
-            offset:       50,          // default
-            mobile:       true,       // default
-            live:         true        // default
-         }
-        ).init();
+        new WOW().init();
         </script>
 
-    <script>
-    const animatedElement = document.getElementById('animated-element');
-    function getDocumentHeight() {
-  return Math.max(
-    document.body.scrollHeight,
-    document.documentElement.scrollHeight,
-    document.body.offsetHeight,
-    document.documentElement.offsetHeight,
-    document.body.clientHeight,
-    document.documentElement.clientHeight
-  );
-}
-
-const documentHeight = getDocumentHeight();
-const percentuale = 20; // Esempio: voglio sapere a che altezza in pixel si trova il 75% della pagina
-
-const triggerPoint = (percentuale / 100) * documentHeight;
-
-    //const triggerPoint = 1200; // La posizione di scorrimento (in pixel) a cui attivare l'animazione
-    const animationClass = 'animate__bounceInDown'; // La classe di animazione di Animate.css che vuoi usare
-    const animatedClass = 'animate__animated'; // Classe base per le animazioni di Animate.css
-
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
-
-        if (scrollPosition > triggerPoint && !animatedElement.classList.contains(animatedClass)) {
-        // Rimuovi l'opacità 0 (o imposta la visibility a visible)
-        animatedElement.style.opacity = 1;
-        // animatedElement.style.visibility = 'visible';
-
-        // Aggiungi le classi per avviare l'animazione
-        animatedElement.classList.add(animatedClass, animationClass);
-        }
-        // Opzionale: se vuoi che l'elemento torni invisibile quando si scorre indietro
-        //   else if (scrollPosition <= triggerPoint && animatedElement.classList.contains(animatedClass)) {
-        //   animatedElement.style.opacity = 0;
-        //   animatedElement.classList.remove(animatedClass, animationClass);
-        // }
-    });
-    </script>
     </body>
 </html>

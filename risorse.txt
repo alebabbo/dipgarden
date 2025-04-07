@@ -1,0 +1,4 @@
+per animazioni:
+https://www.youtube.com/watch?v=Vj4UG4zJ6jE
+
+<!-- Allinea al centro in verticale quando usi vh-100: usa d-flex flex-column e metti mt-auto al primo e mb-auto all'ultimo -->

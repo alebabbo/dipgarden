@@ -91,6 +91,10 @@
   }
 }
 
+#animated-element {
+  opacity: 0;
+}
+
 canvas {
   position: fixed;
   top: 0;
@@ -123,7 +127,7 @@ hr {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Merriweather, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
   line-height: 1.2;
 }
@@ -133,7 +137,7 @@ h1, .h1 {
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -151,7 +155,7 @@ h3, .h3 {
 }
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 }
 
@@ -649,6 +653,7 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+  border-style: solid;
 }
 
 @media (min-width: 576px) {
@@ -7328,6 +7333,9 @@ textarea.form-control-lg {
 .vh-50 {
   height: 40vh !important;
 }
+.vh-20 {
+  height: 20vh !important;
+}
 
 .min-vh-100 {
   min-height: 100vh !important;
@@ -8183,7 +8191,7 @@ textarea.form-control-lg {
 }
 
 .bg-white {
-  --bs-bg-opacity: 1;
+  --bs-bg-opacity: 0.8;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
 
@@ -10848,7 +10856,7 @@ body {
 }
 
 .page-section {
-  padding: 8rem 0;
+  /* padding: 8rem 0; */
 }
 
 .text-white-75 {
@@ -10941,17 +10949,17 @@ hr.divider-light {
 header.masthead {
   height: 100vh;
 
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 4.5rem);
+/*   padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem); */
   /* background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/bg-masthead.jpg"); */
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.5) 0%, rgba(92, 77, 66, 0.3) 100%);
+  /* background: linear-gradient(to bottom, rgba(92, 77, 66, 0.5) 0%, rgba(92, 77, 66, 0.3) 100%); */
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
 }
 header.masthead h1, header.masthead .h1 {
-  font-size: 2.25rem;
+  /* font-size: 2.25rem; */
 }
 @media (min-width: 992px) {
   header.masthead {
@@ -10964,12 +10972,12 @@ header.masthead h1, header.masthead .h1 {
     font-size: 1.15rem;
   }
   header.masthead h1, header.masthead .h1 {
-    font-size: 3rem;
+    /* font-size: 3rem; */
   }
 }
 @media (min-width: 1200px) {
   header.masthead h1, header.masthead .h1 {
-    font-size: 3.5rem;
+    /* font-size: 3.5rem; */
   }
 }
 

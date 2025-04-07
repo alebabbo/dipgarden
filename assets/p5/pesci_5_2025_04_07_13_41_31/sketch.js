@@ -10,7 +10,7 @@ let coloreAcqu = false;
 let scrollPercent = 0;
 
 let scrollScappateMin = 24;
-let scrollScappateMax = 32;
+let scrollScappateMax = 30;
 let scrollAcquaMin = 55;
 let scrollAcquaMax = 150;
 let scrollCresciMin = 65;
@@ -38,6 +38,7 @@ let contatorta = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  createP('Drag the mouse to generate new boids.');
 
   //colorMode(HSB);
   colorMode(RGB);
@@ -94,7 +95,7 @@ function draw() {
   
   let documentHeight = document.documentElement.scrollHeight - windowHeight; //altezza scrollabile
   scrollPercent = (window.scrollY / documentHeight) * 100;
-  text("Scroll %: " + scrollPercent.toFixed(2) + "%", windowWidth/2, windowHeight/2 + 80);
+  text("Scroll %: " + scrollPercent.toFixed(2) + "%", windowWidth/2, windowHeight/2);
   
   if (scrollPercent > scrollScappateMin && scrollPercent < scrollScappateMax){
     scappate = true;
