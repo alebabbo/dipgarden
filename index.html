@@ -18,7 +18,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <!-- animazioni-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <script src="js/wow.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+        <script src="js/wow.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
         <!-- P5.js-->
@@ -61,20 +62,27 @@
         </header>
 
         <section class="page-section">
-            <div class="container vh-50 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-lg-8 mt-auto mb-auto text-center">
-                     <p class="h1 text-primary font-weight-bold">Well, accept it...</p>
-                 </div>
+            <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
+                <div class="row-lg-8 mt-auto mb-auto py-2 text-center">
+                    <p class="h1 text-primary font-weight-bold">Well, accept it...</p>
+                </div>
+
+                <div class="vr h-100 row-lg-8 text-center"></div>
+                     <!-- <div class="vr"></div> -->
+
+                <div class="row-lg-8 mt-auto mb-auto py-2 text-center">
+                    <p class="h1 text-primary font-weight-bold">...you will need:</p>
+                </div>
             </div>
         </section>
 
-        <section class="page-section">
+<!--         <section class="page-section">
             <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
                 <div class="col-lg-8 mt-auto mb-auto text-center">
                      <p class="h1 text-primary font-weight-bold">...you will need:</p>
                  </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Allinea al centro in verticale quando usi vh-100: usa d-flex flex-column e metti mt-auto al primo e mb-auto all'ultimo -->
 
@@ -336,7 +344,7 @@
     }
 
     const documentHeight = getDocumentHeight();
-    const percentuale = 16; // Esempio: voglio sapere a che altezza in pixel si trova il 75% della pagina
+    const percentuale = 14; // Esempio: voglio sapere a che altezza in pixel si trova il 75% della pagina
 
     const triggerPoint = (percentuale / 100) * documentHeight;
 
