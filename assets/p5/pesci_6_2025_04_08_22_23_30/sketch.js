@@ -40,7 +40,7 @@ let contatorta = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-    //createP('Drag the mouse to generate new boids.');
+    createP('Drag the mouse to generate new boids.');
 
 
   //colorMode(HSB);
