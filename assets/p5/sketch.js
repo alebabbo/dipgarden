@@ -188,7 +188,8 @@ class Piante {
         
         if (scrollPercent >= scrollCresciMin && scrollPercent < scrollCresciMax){
   let giro = 30;
-  fill('#72564BD3');
+  //fill('#72564BD3');
+  fill('#A5887DD3');
           
   // disegna il vaso
   let arco = map(contatorta, 0, giro, 0, 2*PI)
@@ -248,9 +249,13 @@ class Pianta {
   constructor(x, y, ind) {
     this.size = width/1000 + random(0, 15);
 
-    let r = random(100,100);
-    let g = random(180, 180);
-    let b = random(120, 120);
+    //let r = random(100,100);
+    //let g = random(180, 180);
+    //let b = random(120, 120);
+    
+    let r = random(120,140);
+    let g = random(200, 240);
+    let b = random(140, 160);
     this.color = color(r, g, b);
     
     this.indice = ind;
@@ -297,26 +302,40 @@ class Pianta {
     //text(int(degrees(differenza)), 0, 0);
     //text(this.size, 0, 0);
     
-    fill(this.color);
-    stroke(colorelinee)
+
     //rect(0, 0, this.size, this.size);
     
-    translate(-this.size, -this.size*2);
+    translate(-this.size, -this.size*2.5);
     
+    // pianta base verde
+    fill(this.color);
+    stroke(colorelinee)
     beginShape();
     vertex(0, -this.size*3);
     bezierVertex(-this.size, -this.size*2.5, -this.size, -this.size, -this.size, -this.size);
     bezierVertex(-this.size, +this.size, 0, this.size*2, 0, this.size*2);
     vertex(0, +this.size*2);
-    //bezierVertex(0, this.size*2, -this.size, this.size, 0, this.size*2);
     bezierVertex(+this.size, this.size, +this.size, -this.size, +this.size, -this.size);
     bezierVertex(+this.size, -this.size, +this.size, -this.size*2.5, 0, -this.size*3);
-    //vertex(0, -this.size*3);
-    // Stop drawing the shape.
     endShape();
     
-    noFill();
+    // pianta ombra grande
+    noStroke();
+    fill('rgba(0, 100, 50, 0.25)');
+    translate(-this.size/3, -this.size/3);
+    beginShape();
+    vertex(0, -this.size*3);
+    bezierVertex(-this.size, -this.size*2.5, -this.size, -this.size, -this.size, -this.size);
+    bezierVertex(-this.size, +this.size, 0, this.size*2, 0, this.size*2);
+    vertex(0, +this.size*2);
+    bezierVertex(+this.size, this.size, +this.size, -this.size, +this.size, -this.size);
+    bezierVertex(+this.size, -this.size, +this.size, -this.size*2.5, 0, -this.size*3);
+    endShape();
     
+    
+    // pianta linee 1
+    stroke(colorelinee)
+    noFill();
     scale(0.9);
     translate(this.size*0.2, this.size*0.2);
     beginShape();
@@ -324,13 +343,11 @@ class Pianta {
     bezierVertex(-this.size, -this.size*2.5, -this.size, -this.size, -this.size, -this.size);
     bezierVertex(-this.size, +this.size, 0, this.size*2, 0, this.size*2);
     vertex(0, +this.size*2);
-    //bezierVertex(0, this.size*2, -this.size, this.size, 0, this.size*2);
     bezierVertex(+this.size, this.size, +this.size, -this.size, +this.size, -this.size);
     bezierVertex(+this.size, -this.size, +this.size, -this.size*2.5, 0, -this.size*3);
-    //vertex(0, -this.size*3);
-    // Stop drawing the shape.
     endShape();
     
+    // pianta linee 2
     scale(1.2);
     rotate(0.05);
     translate(this.size*0, this.size*0.2);
@@ -339,11 +356,8 @@ class Pianta {
     bezierVertex(-this.size, -this.size*2.5, -this.size, -this.size, -this.size, -this.size);
     bezierVertex(-this.size, +this.size, 0, this.size*2, 0, this.size*2);
     vertex(0, +this.size*2);
-    //bezierVertex(0, this.size*2, -this.size, this.size, 0, this.size*2);
     bezierVertex(+this.size, this.size, +this.size, -this.size, +this.size, -this.size);
     bezierVertex(+this.size, -this.size, +this.size, -this.size*2.5, 0, -this.size*3.3);
-    //vertex(0, -this.size*3);
-    // Stop drawing the shape.
     endShape();
     
     pop();
